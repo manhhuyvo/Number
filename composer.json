@@ -1,0 +1,11 @@
+{
+    "name": "manhhuyvo/number",
+    "description": "A library to represent a numeric entity and its operations",
+    "type": "library",
+    "autoload": {
+        "psr-4": {
+            "Manhhuyvo\\Number\\": "src/"
+        }
+    },
+    "require": {}
+}
