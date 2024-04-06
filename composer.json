@@ -7,5 +7,7 @@
             "Manhhuyvo\\Number\\": "src/"
         }
     },
-    "require": {}
+    "require": {
+        "php": ">= 8.0"
+    }
 }
