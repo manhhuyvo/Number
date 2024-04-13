@@ -1,6 +1,6 @@
 <?php
 
-namespace ManhHuyVo\Number\Exception;
+namespace Number\Exception;
 
 use Exception;
 

@@ -1,13 +1,13 @@
 <?php
 
-namespace ManhHuyVo\Number\Entity;
+namespace Number\Entity;
 
-use ManhHuyVo\Number\Constant\RoundingMode;
-use ManhHuyVo\Number\Exception\InvalidDecimalException;
-use ManhHuyVo\Number\Exception\InvalidOperationException;
-use ManhHuyVo\Number\Exception\InvalidRoundingModeException;
-use ManhHuyVo\Number\Exception\InvalidValueException;
-use ManhHuyVo\Number\Exception\InvalidScaleException;
+use Number\Constant\RoundingMode;
+use Number\Exception\InvalidDecimalException;
+use Number\Exception\InvalidOperationException;
+use Number\Exception\InvalidRoundingModeException;
+use Number\Exception\InvalidValueException;
+use Number\Exception\InvalidScaleException;
 
 class Number
 {
@@ -182,7 +182,7 @@ class Number
             throw InvalidScaleException::invalidValue($scale);
         }
 
-        if (!in_array(gettype($scale), ['string', 'float', 'int'])) {
+        if (!in_array(gettype($scale), ['string', 'float', 'double', 'integer'])) {
             throw InvalidScaleException::invalidTypeCast($scale);
         }
 
@@ -199,7 +199,7 @@ class Number
             throw InvalidValueException::invalidValue($value);
         }
 
-        if (!in_array(gettype($value), ['string', 'float', 'int', 'null'])) {
+        if (!in_array(gettype($value), ['string', 'float', 'double', 'integer', 'null'])) {
             throw InvalidValueException::invalidTypeCast($value);
         }
 
@@ -216,7 +216,7 @@ class Number
             throw InvalidDecimalException::invalidValue($decimal);
         }
 
-        if (!in_array(gettype($decimal), ['string', 'float', 'int'])) {
+        if (!in_array(gettype($decimal), ['string', 'float', 'double', 'integer'])) {
             throw InvalidDecimalException::invalidTypeCast($decimal);
         }
 
@@ -233,7 +233,7 @@ class Number
             throw InvalidRoundingModeException::invalidValue($roundingMode);
         }
 
-        if (! in_array(gettype($roundingMode), ['string', 'int', 'null'])) {
+        if (! in_array(gettype($roundingMode), ['string', 'integer', 'null'])) {
             throw InvalidRoundingModeException::invalidTypeCast($roundingMode);
         }
 

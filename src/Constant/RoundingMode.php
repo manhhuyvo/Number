@@ -1,6 +1,6 @@
 <?php
 
-namespace ManhHuyVo\Number\Constant;
+namespace Number\Constant;
 
 final class RoundingMode
 {

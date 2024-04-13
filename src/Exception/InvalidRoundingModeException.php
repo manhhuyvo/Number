@@ -1,9 +1,9 @@
 <?php
 
-namespace ManhHuyVo\Number\Exception;
+namespace Number\Exception;
 
 use Exception;
-use ManhHuyVo\Number\Constant\RoundingMode;
+use Number\Constant\RoundingMode;
 
 class InvalidRoundingModeException extends Exception
 {
@@ -17,7 +17,7 @@ class InvalidRoundingModeException extends Exception
         return new self('The value provided does not match with the allowed type. Expect: string|int|null, Receive: ' . gettype($value) . '.');
     }
 
-    public function invalidAvailableValue(?string $value): self
+    public static function invalidAvailableValue(?string $value): self
     {
         return new self('The value provided is not accepted. Expect: ' . implode('|', RoundingMode::getAll()) . ", Receive: {$value}.");
     }
