@@ -56,7 +56,7 @@ class Number
 
     /** FORMAT OPERATIONS */
 
-    public function numberFormat(string|float|int|null $decimal, ?string $decimalSeparator = '.', ?string $thousandsSeparator = ','): string
+    public function numberFormat(string|float|int|null $decimal = null, ?string $decimalSeparator = '.', ?string $thousandsSeparator = ','): string
     {
         return number_format($this->toFloat(), self::sanitizeDecimal($decimal), $decimalSeparator, $thousandsSeparator);
     }
