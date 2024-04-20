@@ -25,6 +25,11 @@ class Number
         bcscale(self::sanitizeScale($scale));
     }
 
+    public function copy(): self
+    {
+        return new self($this->toFloat());
+    }
+
     /** VALUE-RELATED OPERATIONS */
 
     public function setValue(string|float|int|null $value): self
@@ -61,10 +66,11 @@ class Number
         return number_format($this->toFloat(), self::sanitizeDecimal($decimal), $decimalSeparator, $thousandsSeparator);
     }
 
-    public function round(string|float|int|null $decimal, string|int|null $roundingMode): self
+    public function round(string|float|int|null $decimal = null, string|int|null $roundingMode = null): self
     {
         $decimal = self::sanitizeDecimal($decimal);
         $roundingMode = self::sanitizeRoundingMode($roundingMode);
+        echo $roundingMode;
 
         return $this->setValue(round($this->toFloat(), $decimal, $roundingMode));
     }
