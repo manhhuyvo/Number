@@ -70,14 +70,13 @@ class Number
     {
         $decimal = self::sanitizeDecimal($decimal);
         $roundingMode = self::sanitizeRoundingMode($roundingMode);
-        echo $roundingMode;
 
         return $this->setValue(round($this->toFloat(), $decimal, $roundingMode));
     }
 
     /** MATH OPERATIONS */
 
-    public function plus(self|string|float|int|null $number, string|float|int|null $scale): self
+    public function plus(self|string|float|int|null $number, string|float|int|null $scale = null): self
     {
         if (! $number instanceof self) {
             $number = self::of($number);
@@ -86,7 +85,7 @@ class Number
         return $this->setValue(bcadd($this->toString(), $number->toString()), self::sanitizeScale($scale));
     }
 
-    public function minus(self|string|float|int|null $number, string|float|int|null $scale): self
+    public function minus(self|string|float|int|null $number, string|float|int|null $scale = null): self
     {
         if (! $number instanceof self) {
             $number = self::of($number);
@@ -95,7 +94,7 @@ class Number
         return $this->setValue(bcsub($this->toString(), $number->toString()), self::sanitizeScale($scale));
     }
 
-    public function multiply(self|string|float|int|null $number, string|float|int|null $scale): self
+    public function multiply(self|string|float|int|null $number, string|float|int|null $scale = null): self
     {
         if (! $number instanceof self) {
             $number = self::of($number);
@@ -104,7 +103,7 @@ class Number
         return $this->setValue(bcmul($this->toString(), $number->toString()), self::sanitizeScale($scale));
     }
 
-    public function divide(self|string|float|int|null $number, string|float|int|null $scale): self
+    public function divide(self|string|float|int|null $number, string|float|int|null $scale = null): self
     {
         if (! $number instanceof self) {
             $number = self::of($number);
